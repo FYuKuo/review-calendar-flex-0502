@@ -97,7 +97,14 @@
 
     //利用陣列的迴圈將日期印出
     foreach($allDate as $day){
-        echo "<div> {$day} </div>";
+
+        //檢查變數$day中是否含有空白 如果沒有就將$day變數轉成日期只有d的格式 並印出來, 沒有的話就只印出div
+        if(!empty($day)){
+            $dayFont=date("d",strtotime($day));
+            echo "<div> {$dayFont} </div>";
+        }else{
+            echo "<div></div>";
+        }
     }
 
     echo "</div>";
