@@ -5,6 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0502-複習PHP月曆</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .table {
+            width: 700px;
+            height: 700px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .table>div {
+            border: 1px solid lightpink;
+            width: 100px;
+            height: 100px;
+            margin-left: -1px;
+            margin-top: -1px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h2>0502-複習PHP月曆</h2>
@@ -43,9 +67,13 @@
 
     echo "<hr>";
 
+    echo "<div class='table'>";
+
     foreach($allDate as $day){
         echo "<div> {$day} </div>";
     }
+
+    echo "</div>";
     ?>
 </body>
 </html>
