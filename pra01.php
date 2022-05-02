@@ -19,12 +19,6 @@
             margin: 0 auto;
             margin-top: 10px;
         }
-        .today {
-            color: red;
-            text-decoration: underline;
-            text-underline-offset: 5px;
-            text-decoration-color: red;
-        }
         .table>div {
             border: 1px solid lightpink;
             width: 100px;
@@ -40,7 +34,13 @@
             font-weight: bold;
             text-transform: uppercase; /*小寫轉大寫*/
         }
-    </style>
+        .table>.today {
+            color: red;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-decoration-color: red;
+        }
+        </style>
 </head>
 <body>
     <h2>0502-複習PHP月曆</h2>
@@ -100,16 +100,14 @@
     echo "<div class='header'>Fri</div>";
     echo "<div class='header'>Sat</div>";
 
-    $checktoday=""; //檢查是否為今天的空變數
-    $today=date("Y-m-d"); //今天的日期
-
+    
     //利用陣列的迴圈將日期印出
     foreach($allDate as $day){
-        if($today == $day){
+        $checktoday=""; //檢查是否為今天的空變數
+        $today=date('Y-m-d'); //今天的日期
+        if($day == $today){
             $checktoday='today';
         }
-
-
         //檢查變數$day中是否含有空白 如果沒有就將$day變數轉成日期只有d的格式 並印出來, 沒有的話就只印出div
         if(!empty($day)){
             $dayFont=date("d",strtotime($day));
