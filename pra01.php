@@ -30,6 +30,22 @@
     echo "<hr>";
 
     $allDate=[]; //要放入所有日期的空陣列
+
+    //利用for迴圈將日期從第一天開始每次加一天,加到月份的最後一天,並放入陣列之中
+    for($i=0; $i<$monthDay ;$i++){
+        $date=date('Y-m-d',strtotime("+$i days",$firstDaySecond));
+        $allDate[]=$date;
+    }
+
+    echo "<pre>";
+    print_r($allDate);
+    echo "</pre>";
+
+    echo "<hr>";
+
+    foreach($allDate as $day){
+        echo "<div> {$day} </div>";
+    }
     ?>
 </body>
 </html>
