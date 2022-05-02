@@ -28,6 +28,12 @@
             line-height: 100px;
             text-align: center;
         }
+        .table>.header {
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            text-transform: uppercase; /*小寫轉大寫*/
+        }
     </style>
 </head>
 <body>
@@ -67,8 +73,19 @@
 
     echo "<hr>";
 
+    //包住所有日期之div的外框
     echo "<div class='table'>";
 
+    echo "<div class='header'>Sun</div>";
+    echo "<div class='header'>Mon</div>";
+    echo "<div class='header'>Tues</div>";
+    echo "<div class='header'>Wed</div>";
+    echo "<div class='header'>Thur</div>";
+    echo "<div class='header'>Fri</div>";
+    echo "<div class='header'>Sat</div>";
+
+
+    //利用陣列的迴圈將日期印出
     foreach($allDate as $day){
         echo "<div> {$day} </div>";
     }
